@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxum60ihmhm54"]
+
+[ext_resource type="Texture2D" uid="uid://b5lhkkip7t7e3" path="res://assets/fonts/sky_4.png" id="1_ob10x"]
+
+[node name="BG 2" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(478, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(240.25, 135.5)
+scale = Vector2(0.468262, 0.467014)
+texture = ExtResource("1_ob10x")

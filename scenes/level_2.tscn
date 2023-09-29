@@ -1,0 +1,68 @@
+[gd_scene load_steps=13 format=3 uid="uid://ddbisfsanectg"]
+
+[ext_resource type="PackedScene" uid="uid://c1flff48si43p" path="res://scenes/player.tscn" id="1_lilas"]
+[ext_resource type="Script" path="res://scenes/level.gd" id="1_pty6v"]
+[ext_resource type="PackedScene" uid="uid://bo580fqkejmll" path="res://scenes/level_3.tscn" id="2_e1b7f"]
+[ext_resource type="PackedScene" uid="uid://dck6mkwh2iwfy" path="res://scenes/tile_map.tscn" id="4_k1gs7"]
+[ext_resource type="PackedScene" uid="uid://nlc84o65svog" path="res://scenes/start.tscn" id="5_76oby"]
+[ext_resource type="PackedScene" uid="uid://ccr464l4sh0b5" path="res://scenes/deathzone.tscn" id="6_q1wnu"]
+[ext_resource type="PackedScene" uid="uid://cy7xbq40c4cl8" path="res://scenes/exit.tscn" id="7_yr71w"]
+[ext_resource type="PackedScene" uid="uid://djnq3f06tes5f" path="res://scenes/jump_pad.tscn" id="8_ttbhi"]
+[ext_resource type="PackedScene" uid="uid://httxllxgwc21" path="res://scenes/saw.tscn" id="9_p3o8y"]
+[ext_resource type="FontFile" uid="uid://dihm50u4e0tdu" path="res://assets/fonts/Kenney Pixel Square.ttf" id="10_llak2"]
+[ext_resource type="PackedScene" uid="uid://cdqw46djlhsdu" path="res://scenes/spike_ball.tscn" id="10_vb60m"]
+[ext_resource type="PackedScene" uid="uid://bxum60ihmhm54" path="res://scenes/bg_2.tscn" id="12_8q8sv"]
+
+[node name="level 2" type="Node2D"]
+script = ExtResource("1_pty6v")
+next_level = ExtResource("2_e1b7f")
+
+[node name="Player" parent="." instance=ExtResource("1_lilas")]
+position = Vector2(41, 141)
+
+[node name="TileMap" parent="." instance=ExtResource("4_k1gs7")]
+layer_0/tile_data = PackedInt32Array(851968, 65536, 1, 851969, 65536, 1, 851970, 65536, 1, 851971, 65536, 1, 851972, 65536, 1, 851973, 65536, 1, 851974, 65536, 1, 851991, 65536, 1, 851992, 65536, 1, 851993, 65536, 1, 851994, 65536, 1, 851995, 65536, 1, 851996, 65536, 1, 851997, 65536, 1, 589836, 0, 0, 655372, 655360, 11, 589837, 65536, 0, 655373, 720896, 11, 589838, 65536, 0, 655374, 786432, 11, 589839, 65536, 0, 655375, 851968, 11, 589840, 262144, 0, 655376, 917504, 11, 786432, 65536, 0, 786433, 65536, 0, 786434, 65536, 0, 786435, 65536, 0, 786436, 65536, 0, 786437, 65536, 0, 786438, 65536, 0, 786455, 65536, 0, 786456, 65536, 0, 786457, 65536, 0, 786458, 65536, 0, 786459, 65536, 0, 786460, 65536, 0, 786461, 65536, 0, 786439, 262144, 0, 851975, 262144, 1, 786462, 262144, 0, 851998, 262144, 1, 786454, 0, 0, 851990, 0, 1, 655394, 0, 0, 720930, 655360, 11, 655395, 131072, 0, 720931, 720896, 11, 655396, 131072, 0, 720932, 786432, 11, 655397, 131072, 0, 720933, 851968, 11, 655398, 262144, 0, 720934, 917504, 11, 393259, 0, 0, 458795, 655360, 11, 393260, 131072, 0, 458796, 720896, 11, 393261, 131072, 0, 458797, 786432, 11, 393262, 131072, 0, 458798, 851968, 11, 393263, 262144, 0, 458799, 917504, 11, 196661, 0, 0, 262197, 655360, 11, 196662, 131072, 0, 262198, 720896, 11, 196663, 131072, 0, 262199, 786432, 11, 196664, 131072, 0, 262200, 851968, 11, 196665, 262144, 0, 262201, 917504, 11, 917563, 131072, 1, 917562, 131072, 1, 917561, 131072, 1, 917560, 131072, 1, 917559, 131072, 1, 917558, 131072, 1, 917557, 131072, 1, 917556, 131072, 1, 852021, 131072, 0, 852022, 131072, 0, 852023, 131072, 0, 852024, 131072, 0, 852025, 131072, 0, 852026, 131072, 0, 852027, 131072, 0, 852020, 131072, 0, 852019, 0, 0, 917555, 0, 1, 983099, 131072, 2, 983098, 131072, 2, 983097, 131072, 2, 983096, 131072, 2, 983095, 131072, 2, 983094, 131072, 2, 983093, 131072, 2, 983092, 131072, 2, 1048628, 131072, 2, 1048629, 131072, 2, 1048630, 131072, 2, 1048631, 131072, 2, 1048632, 131072, 2, 1048633, 131072, 2, 1048634, 131072, 2, 1048635, 131072, 2, 983091, 0, 2, 1048627, 0, 3)
+
+[node name="start" parent="." instance=ExtResource("5_76oby")]
+position = Vector2(22, 170)
+
+[node name="deathzone" parent="." instance=ExtResource("6_q1wnu")]
+position = Vector2(112, -16)
+scale = Vector2(1.00155, 1)
+
+[node name="exit" parent="." instance=ExtResource("7_yr71w")]
+position = Vector2(924, 193)
+
+[node name="jump pad" parent="." instance=ExtResource("8_ttbhi")]
+position = Vector2(-90, 7)
+
+[node name="jump pad2" parent="." instance=ExtResource("8_ttbhi")]
+position = Vector2(398, -26)
+
+[node name="jump pad3" parent="." instance=ExtResource("8_ttbhi")]
+position = Vector2(550, -91)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 9.0
+offset_top = 88.0
+offset_right = 81.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_llak2")
+text = "LEVEL 2"
+
+[node name="traps" type="Node2D" parent="."]
+
+[node name="saw" parent="traps" instance=ExtResource("9_p3o8y")]
+position = Vector2(325, 191)
+
+[node name="saw2" parent="traps" instance=ExtResource("9_p3o8y")]
+position = Vector2(667, 150)
+
+[node name="saw3" parent="traps" instance=ExtResource("9_p3o8y")]
+position = Vector2(820, 100)
+
+[node name="SpikeBall" parent="traps" instance=ExtResource("10_vb60m")]
+position = Vector2(232, 84)
+
+[node name="BG 2" parent="." instance=ExtResource("12_8q8sv")]

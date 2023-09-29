@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c261y6q12wsy7"]
+
+[ext_resource type="Texture2D" uid="uid://dnvdxkbjuo5cg" path="res://assets/textures/player/Coin_video_game.png" id="1_i3ylw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ts4r"]
+
+[node name="coin" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(224, 133)
+scale = Vector2(0.115234, 0.115234)
+texture = ExtResource("1_i3ylw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(224, 133)
+shape = SubResource("CircleShape2D_4ts4r")

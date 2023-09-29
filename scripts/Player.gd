@@ -6,8 +6,16 @@ class_name Player
 @export var speed = 125
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var healthbar = $healthbar
+
+
+
 
 var active = true
+
+func _ready():
+	healthbar.set_size(Vector2(23,4))
+	
 
 func _physics_process(delta):
 	if is_on_floor()==false:

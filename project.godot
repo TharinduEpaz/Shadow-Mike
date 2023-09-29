@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Shadow Mike"
-run/main_scene="res://scenes/level.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -56,9 +56,11 @@ reset={
 
 [layer_names]
 
-2d_physics/layer_6="world"
-2d_physics/layer_7="player"
-2d_physics/layer_8="deathzone"
+2d_physics/layer_1="world"
+2d_physics/layer_2="player"
+2d_physics/layer_3="deathzone"
+2d_physics/layer_4="trap"
+2d_physics/layer_5="exit_area"
 
 [rendering]
 

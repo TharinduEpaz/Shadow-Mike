@@ -1,15 +1,48 @@
 extends Node2D
 
-@onready var start_position = $StartPosition
+@onready var start = $start
+@onready var player = $Player
+@onready var exit = $exit
+@onready var deathzone = $deathzone
+@onready var coin = $coin
+@onready var score = 0
+@export var health = 100
+
+@export var next_level : PackedScene = null;
+
+func _ready():
+	player.global_position = start.get_spawn_pos();
+	var traps = get_tree().get_nodes_in_group("traps")
+	for trap in traps:
+		trap.touched_player.connect(_on_trap_touched_player)
+	
+	exit.body_entered.connect(_on_exit_body_entered)
+	deathzone.body_entered.connect(_on_deathzone_body_entered)	
+
 
 func _process(delta):
 	if (Input.is_action_just_pressed("quit")):
 		get_tree().quit()
+		
 	elif (Input.is_action_just_pressed("reset")):
 		get_tree().reload_current_scene()
 
 
 func _on_deathzone_body_entered(body):
-	body.velocity = Vector2.ZERO
-	body.global_position = start_position.global_position;
+	reset_player()
 	
+		
+func _on_trap_touched_player():
+	reset_player()
+
+
+func reset_player():
+	player.velocity = Vector2.ZERO
+	player.global_position = start.get_spawn_pos();
+	
+func _on_exit_body_entered(body):
+	if body is Player:
+		if next_level != null:
+			exit.animate();
+			await get_tree().create_timer(1.5).timeout
+			get_tree().change_scene_to_packed(next_level)

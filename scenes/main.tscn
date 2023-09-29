@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp26w0qr6c15d"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_yahhq"]
+[ext_resource type="FontFile" uid="uid://dihm50u4e0tdu" path="res://assets/fonts/Kenney Pixel Square.ttf" id="2_d2l3l"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_yahhq")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 480.0
+offset_bottom = 269.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 105.0
+offset_top = 60.0
+offset_right = 381.0
+offset_bottom = 137.0
+theme_override_fonts/font = ExtResource("2_d2l3l")
+theme_override_font_sizes/font_size = 34
+text = "SHADOW MIKE"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 147.0
+offset_top = 144.0
+offset_right = 319.0
+offset_bottom = 191.0
+text = "PLAY"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 185.0
+offset_top = 212.0
+offset_right = 346.0
+offset_bottom = 238.0
+theme_override_font_sizes/font_size = 10
+text = "Press Q to quit game"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
