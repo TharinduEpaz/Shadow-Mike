@@ -6,15 +6,14 @@ class_name Player
 @export var speed = 125
 
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var healthbar = $healthbar
+
 
 
 
 
 var active = true
 
-func _ready():
-	healthbar.set_size(Vector2(23,4))
+	
 	
 
 func _physics_process(delta):
@@ -27,6 +26,7 @@ func _physics_process(delta):
 	if active==true:
 		if Input.is_action_just_pressed("jump") && is_on_floor(): #&& is_on_floor():
 			jump(jump_force)
+			AudioPlayer.play_sfx("jump")
 		
 		direction = Input.get_axis("move_left", "move_right")
 	if direction != 0:

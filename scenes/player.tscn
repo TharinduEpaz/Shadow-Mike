@@ -174,16 +174,3 @@ shape = SubResource("RectangleShape2D_f0irj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_bottom = 271
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -23.0
-offset_top = -34.0
-offset_right = 21.0
-offset_bottom = -30.0
-
-[node name="healthbar" type="ColorRect" parent="."]
-offset_left = -23.0
-offset_top = -34.0
-offset_right = 21.0
-offset_bottom = -30.0
-color = Color(0.219608, 0.756863, 0.498039, 1)
